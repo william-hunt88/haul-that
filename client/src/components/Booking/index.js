@@ -1,9 +1,11 @@
 import React from 'react';
 
-function Service() {
+function Booking() {
+
+    
     return (
         <div>
-            Service
+            Booking
         </div>
     );
 }
