@@ -2,15 +2,19 @@ import React from 'react';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import Profile from './components/Profile';
-//import Service from './components/Service';
+import Landing from './components/Landing';
+
 
 function App() {
   return (
     <div>
-      <Home />
       <Nav />
-      <Profile />
-      <Service />
+
+      
+      {/* <Home /> */}
+      
+      {/* <Profile /> */}
+      
     </div>
   );
 }
