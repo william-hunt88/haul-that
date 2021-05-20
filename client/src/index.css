@@ -17,15 +17,20 @@ code {
     monospace;
 }
 .booking {
-  padding: 10px;
+  padding-left: 5px;
+  padding-bottom: 25px;
+  font-size: 20px;
 }
 
 .jobs {
-  padding: 10px;
+  padding-left: 5px;
+  padding-bottom: 25px;
+  font-size: 20px;
 }
 
 .account {
-  padding: 10px;
+  padding-left: 5px;
+  font-size: 20px;
 }
 .site-page-header {
   border: 1px solid rgb(235, 237, 240);
@@ -39,7 +44,7 @@ code {
 .anticon.anticon-user{
  display: flex;
  justify-content:flex-end;
-  position: fixed;
+ position: fixed;
  top: 40px;
  right: 30px;
  font-size: 28px;
@@ -68,9 +73,8 @@ code {
   font-size: 40px;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
-
-
 
 .navBar button {
   position: fixed;

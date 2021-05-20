@@ -32,6 +32,7 @@ function Nav() {
         <li class="booking">Booking</li>
         <li class="jobs">Jobs</li>
         <li class="account">Account</li>
+        
       </ul>
     </nav>
   );
