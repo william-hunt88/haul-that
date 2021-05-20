@@ -5,7 +5,7 @@
 const resolvers = {
     Query: {
       helloWorld: () => {
-        return 'hello wor!';
+        return 'hello world!';
       }
     }
   };
