@@ -10,11 +10,11 @@ function App() {
   return (
     <Router>
     <div>
-      <Home>
-        
-      </Home>
-      <Profile />
       <Nav />
+      {/* <Home /> */}
+      
+      {/* <Profile /> */}
+      
     </div>
     </Router>
   );
