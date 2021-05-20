@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import Auth from "../../utils/auth";
+import Auth from "../utils/auth";
 
-const Home = () => {
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+
+function Home() {
+  // const Home = () => {
+  //   const logout = (event) => {
+  //     event.preventDefault();
+  //     Auth.logout();
+  //   }
+  // };
 
   return (
     <Router>
@@ -17,9 +20,8 @@ const Home = () => {
           <Link to="/">
             <h1>Haul That</h1>
           </Link>
-
           <nav className="text-center">
-            {Auth.loggedIn() ? (
+            {/* {Auth.loggedIn() ? (
               <>
                 <Link to="/profile">Me</Link>
                 <a href="/" onClick={logout}>
@@ -31,7 +33,9 @@ const Home = () => {
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Signup</Link>
               </>
-            )}
+            )} */}
+
+            Check it out
           </nav>
         </div>
       </header>
