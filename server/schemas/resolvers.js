@@ -17,6 +17,7 @@ const resolvers = {
     jobs: async () => {
       return Job.find().select("-__v -password");
     },
+    time: () => new Date()
   },
 
   Mutation: {

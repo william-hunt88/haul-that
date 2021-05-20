@@ -4,7 +4,9 @@ const typeDefs = gql`
   scalar DateTime
 
   type Query {
+    helloWorld: String
     jobs: [Job]
+    time: DateTime
   }
 
   type User {
@@ -19,7 +21,7 @@ const typeDefs = gql`
     _id: ID
     quantity: String!
     category: String!
-    date: DateTime
+    date: DateTime!
     description: String!
     pickup: Address
     dropoff: Address
@@ -47,7 +49,7 @@ const typeDefs = gql`
   input jobInput {
     quantity: String!
     category: String!
-    date: DateTime
+    date: String!
     description: String!
     pickup: String
     dropoff: String
@@ -65,10 +67,10 @@ const typeDefs = gql`
     addJob(
       quantity: String!
       category: String!
-      date: DateTime
+      date: DateTime!
       description: String!
-      pickup: addressInput
-      dropoff: addressInput
+      pickup: addressInput!
+      dropoff: addressInput!
     ): Job
   }
 `;
