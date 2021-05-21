@@ -17,15 +17,20 @@ code {
     monospace;
 }
 .booking {
-  padding: 10px;
+  padding-left: 5px;
+  padding-bottom: 25px;
+  font-size: 20px;
 }
 
 .jobs {
-  padding: 10px;
+  padding-left: 5px;
+  padding-bottom: 25px;
+  font-size: 20px;
 }
 
 .account {
-  padding: 10px;
+  padding-left: 5px;
+  font-size: 20px;
 }
 .site-page-header {
   border: 1px solid rgb(235, 237, 240);
@@ -36,9 +41,25 @@ code {
   padding-bottom: 5px;
 }
 
-.profile{
+.anticon.anticon-user{
+ display: flex;
+ justify-content:flex-end;
+ position: fixed;
+ top: 40px;
+ right: 30px;
+ font-size: 28px;
+ color: white;
+ 
+}
+
+.anticon.anticon-menu {
+  font-size: 25px;
+  position: fixed;
+  top: 40px;
+  left: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  color: white;
 }
 
 .navBar {
@@ -47,10 +68,12 @@ code {
 
 .ant-page-header-heading-title {
   margin-top: 8px;
+  color: white;
   font-family: "ubunto";
   font-size: 40px;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .navBar button {
@@ -65,15 +88,21 @@ code {
   color: rgba(193, 193, 193, 0);
 }
 
+.buttonsmall{
+font-size: 0px;
+color: rgba(255, 0, 0, 0);
+background-color: rgba(255, 0, 0, 0);
+border-color: rgba(255, 0, 0, 0);
 
+}
 
 .menuNav.showMenu {
-  overflow-y: scroll;
+  
   list-style: none;
   position: fixed;
-  top: 0;
+  top: 3px;
   background: rgb(203, 43, 43);
-  left: 0;
+  left: 1px;
   bottom: 0;
   height: 40vh;
   width: 0;

@@ -4,13 +4,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import Profile from './components/Profile';
-import Booking from './components/Booking/Booking';
+import Landing from './components/Landing';
+
 
 function App() {
   return (
     <Router>
     <div>
       <Nav />
+
+      
       {/* <Home /> */}
       
       {/* <Profile /> */}
