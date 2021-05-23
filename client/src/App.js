@@ -13,7 +13,7 @@ function App() {
       
       {/* <Home /> */}
       
-      {/* <Profile /> */}
+      <Profile />
       
     </div>
   );
