@@ -28,6 +28,12 @@ const userSchema = new Schema(
       type: Boolean,
       required: true
     },
+    jobs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Job'
+      }
+    ]
   },
   {
     toJSON: {
