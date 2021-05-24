@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Button, Form, Container, Col, Row } from 'react-bootstrap';
 import history from '../../history';
-
+import './booking.css';
 
 export default class Routes extends Component {
     render() {
     
         return (
-            <Container>
+            <Container className="bookingForm">
                 <Row>
                     <Col xs={6} md={4}>
                         <h1>Column One</h1>

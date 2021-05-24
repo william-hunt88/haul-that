@@ -9,7 +9,6 @@ import Routes from './Routes';
 ReactDOM.render(
   <Router>
     <App />
-    <Routes />
   </Router>,
   document.getElementById('root')
 );

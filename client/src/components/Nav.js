@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { PageHeader } from "antd";
-import { UserOutlined, MenuOutlined } from "@ant-design/icons";
-import { Button } from 'react-bootstrap';
-import Booking from './Booking/Booking';
-import history from '../history';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 function Nav() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -13,31 +9,11 @@ function Nav() {
   };
 
   return (
-    <nav className="navBar">
-      <PageHeader
-        className="site-page-header"
-        title="HaulThat"
-        extra={[<UserOutlined class="profile" key="3"></UserOutlined>]}
-      />
-
-      <button className="buttonsmall" onClick={handleToggle}>
-        {navbarOpen ? (
-          <MenuOutlined
-            style={{ color: "#ffffff", width: "40px", height: "40px" }}
-          />
-        ) : (
-          <MenuOutlined
-            style={{ color: "#ffffff", width: "40px", height: "40px" }}
-          />
-        )}</button>
-
-      <ul class="menu1" className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-      <li class="booking">Booking</li>
-      <li class="jobs">Jobs</li>
-      <li class="account">Account</li>
-      
-      </ul>
-    </nav>
+    <DropdownButton variant="danger" id="dropdown-basic-button" title="Dropdown button">
+      <Dropdown.Item href="#/BookingA">Booking</Dropdown.Item>
+      <Dropdown.Item href="#/action-2">Jobs</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Account</Dropdown.Item>
+    </DropdownButton>
   );
 }
 
