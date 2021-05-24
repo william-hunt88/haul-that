@@ -4,11 +4,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Map from "../Map";
 import Auth from "../../utils/auth";
 
-const Home = () => {
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+
+function Home() {
+  // const Home = () => {
+  //   const logout = (event) => {
+  //     event.preventDefault();
+  //     Auth.logout();
+  //   }
+  // };
 
   // mutation to get all jobs lat and long from mapquest and send to Map Component as props
 
