@@ -1,5 +1,6 @@
 body {
-  background-color: rgb(174, 174, 174);
+  height: 0px;
+  background-color: rgb(255, 255, 255);
   margin: 0;
   border-radius: 0px 0px 20px 20px;
   font-family: "ubunto";
@@ -41,6 +42,40 @@ code {
   padding-bottom: 5px;
 }
 
+.site-card-border-less-wrapper {
+  padding: 30px;
+  background: #ececec;
+}
+
+.ant-card-body {
+border: 1px solid black;
+border-radius: 12px 12px 12px 12px;
+}
+
+p {
+  margin-left: 90px;
+  font-family: "ubunto";
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.ant-card-head {
+  padding-bottom: 10px;
+  margin-left: 80px;
+  padding-top: 15px;
+  font-size: 20px;
+}
+
+.ant-btn.ant-btn-primary{
+  font-family: "ubunto";
+  border-radius: 12px 12px 12px 12px;
+background-color: rgb(35, 133, 254);
+font-size: 17px;
+display: flex;
+margin-left: 90px;
+margin-bottom: 10px;
+}
+
 .anticon.anticon-user{
  display: flex;
  justify-content:flex-end;
@@ -50,16 +85,6 @@ code {
  font-size: 28px;
  color: white;
  
-}
-
-.anticon.anticon-menu {
-  font-size: 25px;
-  position: fixed;
-  top: 40px;
-  left: 30px;
-  display: flex;
-  justify-content: flex-start;
-  color: white;
 }
 
 .navBar {
@@ -84,37 +109,11 @@ code {
   cursor: pointer;
 }
 
-.menuNav {
-  color: rgba(193, 193, 193, 0);
-}
-
-.buttonsmall{
-font-size: 0px;
-color: rgba(255, 0, 0, 0);
-background-color: rgba(255, 0, 0, 0);
-border-color: rgba(255, 0, 0, 0);
-
-}
-
-.menuNav.showMenu {
-  
-  list-style: none;
+.title {
+  font-family: "ubunto";
   position: fixed;
-  top: 3px;
-  background: rgb(203, 43, 43);
-  left: 1px;
-  bottom: 0;
-  height: 40vh;
-  width: 0;
-  overflow: hidden;
-  max-width: 100px;
-  z-index: 9;
-  width: 85px;
-  color: rgb(223, 223, 223);
-  font-size: 14px;
-  padding: 8px;
-  margin-top: 20px;
-  border-radius: 0px 0px 12px 12px;
+  left: 500px;
+  top: 5px;
 }
 
 a {
@@ -126,6 +125,78 @@ a {
   font-weight: bold;
 }
 
-.menuNav li:first-child {
-  margin-top: 7rem;
+
+
+/* Navbar container */
+.navbar {
+  height: 80px;
+  overflow: hidden;
+  background-color: rgb(179, 9, 9);
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  display: flex;
+  
+  font-size: 40px;
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
