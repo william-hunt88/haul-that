@@ -14,6 +14,7 @@
     "antd": "^4.15.6",
     "bootstrap": "^5.0.1",
     "react-bootstrap": "^1.6.0",
+    "react-bootstrap-dropdown-menu": "^1.1.23",
     "react-router-dom": "^5.2.0"
   }
 }
