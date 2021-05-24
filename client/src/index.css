@@ -1,5 +1,6 @@
 body {
-  background-color: rgb(174, 174, 174);
+  height: 0px;
+  background-color: rgb(255, 255, 255);
   margin: 0;
   border-radius: 0px 0px 20px 20px;
   font-family: "ubunto";
@@ -12,91 +13,3 @@ body {
   src: url("./fonts/UbuntuMono-Regular.ttf");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-.booking {
-  padding: 10px;
-}
-
-.jobs {
-  padding: 10px;
-}
-
-.account {
-  padding: 10px;
-}
-.site-page-header {
-  border: 1px solid rgb(235, 237, 240);
-  background-color: rgb(203, 43, 43);
-  height: 80px;
-  border-radius: 20px 20px 0px 0px;
-  padding-top: 20px;
-  padding-bottom: 5px;
-}
-
-.profile{
-  display: flex;
-  justify-content: center;
-}
-
-.navBar {
-  position: relative;
-}
-
-.ant-page-header-heading-title {
-  margin-top: 8px;
-  font-family: "ubunto";
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.navBar button {
-  position: fixed;
-  left: 40px;
-  top: 40px;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.menuNav {
-  color: rgba(193, 193, 193, 0);
-}
-
-
-
-.menuNav.showMenu {
-  overflow-y: scroll;
-  list-style: none;
-  position: fixed;
-  top: 0;
-  background: rgb(203, 43, 43);
-  left: 0;
-  bottom: 0;
-  height: 40vh;
-  width: 0;
-  overflow: hidden;
-  max-width: 100px;
-  z-index: 9;
-  width: 85px;
-  color: rgb(223, 223, 223);
-  font-size: 14px;
-  padding: 8px;
-  margin-top: 20px;
-  border-radius: 0px 0px 12px 12px;
-}
-
-a {
-  display: block;
-  padding: 10px 40px;
-  text-decoration: none;
-  color: red;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.menuNav li:first-child {
-  margin-top: 7rem;
-}
