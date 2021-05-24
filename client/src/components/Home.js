@@ -21,9 +21,8 @@ function Home() {
           <Link to="/">
             <h1>Haul That</h1>
           </Link>
-
-          {/* <nav className="text-center">
-            {Auth.loggedIn() ? (
+          {/* <nav className="text-center"> */}
+            {/* {Auth.loggedIn() ? (
               <>
                 <Link to="/profile">Me</Link>
                 <a href="/" onClick={logout}>
@@ -35,8 +34,10 @@ function Home() {
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Signup</Link>
               </>
-            )}
-          </nav> */}
+            )} */}
+
+            
+          {/* </nav> */}
         </div>
       </header>
     </Router>
