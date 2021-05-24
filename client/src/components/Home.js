@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import Nav from './Nav';
 import Auth from "../utils/auth";
 
 
@@ -20,7 +20,8 @@ function Home() {
           <Link to="/">
             <h1>Haul That</h1>
           </Link>
-          <nav className="text-center">
+          <Nav />
+          {/* <nav className="text-center">
             {/* {Auth.loggedIn() ? (
               <>
                 <Link to="/profile">Me</Link>
@@ -33,10 +34,10 @@ function Home() {
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Signup</Link>
               </>
-            )} */}
+            )}
 
             Check it out
-          </nav>
+          </nav> */}
         </div>
       </header>
     </Router>

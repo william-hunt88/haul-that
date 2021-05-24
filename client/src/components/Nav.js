@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { PageHeader} from "antd";
-import { UserOutlined } from "@ant-design/icons";
-import Booking from './Booking/Booking';
-import history from '../history';
-
-
 import { PageHeader } from "antd";
 import { UserOutlined, MenuOutlined } from "@ant-design/icons";
+import { Button } from 'react-bootstrap';
+import Booking from './Booking/Booking';
+import history from '../history';
 
 function Nav() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -35,7 +32,7 @@ function Nav() {
         )}</button>
 
       <ul class="menu1" className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-      <li class="booking" onClick={() => history.push('/BookingA')}>Booking</li>
+      <li class="booking">Booking</li>
       <li class="jobs">Jobs</li>
       <li class="account">Account</li>
       
