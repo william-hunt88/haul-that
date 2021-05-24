@@ -1,17 +1,22 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import Home from './components/Home';
 import Nav from './components/Nav';
 import Profile from './components/Profile';
-import Service from './components/Service';
+import Booking from './components/Booking/Booking';
 
 function App() {
   return (
+    <Router>
     <div>
-      <Home />
       <Nav />
-      <Profile />
-      <Service />
+      {/* <Home /> */}
+      
+      {/* <Profile /> */}
+      
     </div>
+    </Router>
   );
 }
 
