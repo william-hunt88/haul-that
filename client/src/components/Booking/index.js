@@ -10,12 +10,13 @@ function Booking() {
 //     if (response.ok) {
 //       response.json().then(function (routeInfo) {
 //         console.log(routeInfo.route.distance);
+//         console.log(routeInfo.route.locations.latLng.lng)
 //       });
 //     }
 //   });
   
 //   addJob({
-//       variables: {...formState, distance: routeDistance, price: jobPrice}
+//       variables: {...formState, distance: routeDistance, latitude: routeLatitude, longitude: routeLongitude, price: jobPrice}
 //   })
 
   return <div>Booking</div>;

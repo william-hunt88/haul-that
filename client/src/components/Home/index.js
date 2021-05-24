@@ -37,7 +37,6 @@ const Home = () => {
           </nav> */}
         </div>
       </header>
-      <Map />
     </Router>
   );
 };
