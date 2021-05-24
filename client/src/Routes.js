@@ -14,7 +14,7 @@ export default class Routes extends Component {
             <Router history={history}>
                 <Switch>
                     <Route path="/Booking" exact component={Booking} />
-                    <Route path="/BookingA" component={BookingA} />
+                    <Route exact path="/BookingA" component={BookingA} />
                     <Route path="/BookingB" component={BookingB} />
                     <Route path="/BookingC" component={BookingC} />
                     <Route path="/BookingD" component={BookingD} />
