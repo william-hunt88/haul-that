@@ -20,7 +20,7 @@ function Home() {
           <Link to="/">
             <h1>Haul That</h1>
           </Link>
-          <nav className="text-center">
+          {/* <nav className="text-center"> */}
             {/* {Auth.loggedIn() ? (
               <>
                 <Link to="/profile">Me</Link>
@@ -35,8 +35,8 @@ function Home() {
               </>
             )} */}
 
-            Check it out
-          </nav>
+            
+          {/* </nav> */}
         </div>
       </header>
     </Router>
