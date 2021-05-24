@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 
 
 function Home() {
@@ -13,6 +12,8 @@ function Home() {
   //   }
   // };
 
+  // mutation to get all jobs lat and long from mapquest and send to Map Component as props
+
   return (
     <Router>
       <header className="bg-secondary mb-4 py-2 flex-row align-center">
@@ -20,8 +21,9 @@ function Home() {
           <Link to="/">
             <h1>Haul That</h1>
           </Link>
-          <nav className="text-center">
-            {/* {Auth.loggedIn() ? (
+
+          {/* <nav className="text-center">
+            {Auth.loggedIn() ? (
               <>
                 <Link to="/profile">Me</Link>
                 <a href="/" onClick={logout}>
@@ -33,10 +35,8 @@ function Home() {
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Signup</Link>
               </>
-            )} */}
-
-            Check it out
-          </nav>
+            )}
+          </nav> */}
         </div>
       </header>
     </Router>
