@@ -8,7 +8,7 @@ export default class Booking extends Component {
         return (
             <div>
                 <form>
-                    <Button variant="btn btn-success" onClick={() => history.push('/BookingA')}>Book A Job</Button>
+                    <Button class="buttonbooking" variant="btn btn-success" onClick={() => history.push('/BookingA')}>Book A Job</Button>
                 </form>
             </div>
         );
