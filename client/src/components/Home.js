@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import Map from "../Map";
-import Auth from "../../utils/auth";
+// import Auth from "../utils/auth";
 
 
 function Home() {
