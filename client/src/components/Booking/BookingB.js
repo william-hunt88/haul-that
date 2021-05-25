@@ -8,7 +8,6 @@ export default class Routes extends Component {
     
         return (
             <div>
-                
                 <form>
                     <Button variant="btn btn-success" onClick={() => history.push('/')}>Complete</Button>
                 </form>

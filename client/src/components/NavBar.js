@@ -14,7 +14,7 @@ function NavBar() {
         <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav>
                 <Nav.Link href='/'>Home</Nav.Link>
-                <Nav.Link href='/booking'>Booking</Nav.Link>
+                <Nav.Link href='/bookingA'>Booking</Nav.Link>
                 <Nav.Link href='/jobs'>Jobs</Nav.Link>
                 <Nav.Link href='/account'>Account</Nav.Link>
             </Nav>

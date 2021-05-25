@@ -9,9 +9,7 @@ export default class Routes extends Component {
         return (
             <Container className="bookingForm">
                 <Row>
-                    <Col xs={6} md={4}>
-                        <h1>Column One</h1>
-                    </Col>
+                    <Col xs={6} md={4} />
                     <Col xs={6} md={4}>
                         <Form>
                             <Form.Group controlId="formQuantity">
@@ -94,15 +92,11 @@ export default class Routes extends Component {
                                     <Form.Control />
                                 </Form.Group>
                             </Form.Row>
-                            <Button variant="primary" type="submit">
-                                Submit
-                            </Button>
                         </Form>
+                        <br />
                         <Button variant="btn btn-success" onClick={() => history.push('/BookingB')}>Continue</Button>
                         </Col>
-                    <Col xs={6} md={4}>
-                        <h1>Column Three</h1>
-                    </Col>
+                    <Col xs={6} md={4} />
                 </Row>
             </Container>
         );
