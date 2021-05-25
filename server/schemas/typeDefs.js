@@ -8,14 +8,14 @@ const typeDefs = gql`
     jobs: [Job]
     users: [User]
     time: DateTime
+    me: User
   }
 
   type User {
     _id: ID
-    username: String!
+    firstName: String!
+    lastName: String!
     email: String!
-    driver: Boolean!
-    customer: Boolean!
     jobs: [Job]
   }
 
@@ -55,11 +55,10 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(
-      username: String!
+      firstName: String!
+      lastName: String!
       email: String!
       password: String!
-      driver: Boolean!
-      customer: Boolean!
     ): Auth
     login(email: String!, password: String!): Auth
     addJob(

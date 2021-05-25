@@ -1,16 +1,140 @@
-body {
-  height: 0px;
-  background-color: rgb(255, 255, 255);
-  margin: 0;
-  border-radius: 0px 0px 20px 20px;
-  font-family: "ubunto";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
 @font-face {
   font-family: ubunto;
   src: url("./fonts/UbuntuMono-Regular.ttf");
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.form-group{
+  padding: 10px;
+}
+
+.loginform {
+ position: relative;
+top: 200px;
+left: 20px;
+}
+
+.signupform {
+  position: relative;
+  top: 200px;
+  left: 20px;
+}
+
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.title {
+  font-family: "ubunto";
+  color: rgba(250, 235, 215, 0.858);
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 575px) {
+  .title {
+    top: 4px;
+    position: fixed;
+    left: 125px;
+    font-size: 35px;
+  }
+}
+
+* {
+  
+  box-sizing: border-box;
+}
+
+
+.navbar-light {
+  background-color: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+.inner {
+  width: 450px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.outer .form-control:focus {
+  border-color: #ee1e1e;
+  box-shadow: none;
+}
+
+.outer h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.custom-control-label {
+  font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: center;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.login1.nav-link {
+  position: fixed;
+  right: 80px;
+  color: rgba(250, 235, 215, 0.858);
+}
+
+.signup1.nav-link {
+  position: fixed;
+  right: 5px;
+  color: rgba(250, 235, 215, 0.858);
+}
+
+.signup1.nav-link:hover {
+  color: yellow;
+}
+.login1.nav-link:hover {
+  color: yellow;
+}
+
+@media screen and (max-width: 575px) {
+  .login1.nav-link {
+    display: none
+  }}
+
+  @media screen and (max-width: 575px) {
+    .signup1.nav-link {
+      display: none
+    }}
