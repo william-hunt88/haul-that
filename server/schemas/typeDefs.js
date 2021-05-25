@@ -6,6 +6,7 @@ const typeDefs = gql`
   type Query {
     helloWorld: String
     jobs: [Job]
+    users: [User]
     time: DateTime
   }
 
@@ -15,6 +16,7 @@ const typeDefs = gql`
     email: String!
     driver: Boolean!
     customer: Boolean!
+    jobs: [Job]
   }
 
   type Job {
@@ -25,6 +27,7 @@ const typeDefs = gql`
     description: String!
     pickup: Address
     dropoff: Address
+    
   }
 
   type Address {
@@ -46,15 +49,6 @@ const typeDefs = gql`
     user: User
   }
 
-  input jobInput {
-    quantity: String!
-    category: String!
-    date: String!
-    description: String!
-    pickup: String
-    dropoff: String
-  }
-
   type Mutation {
     addUser(
       username: String!
@@ -72,6 +66,7 @@ const typeDefs = gql`
       pickup: addressInput!
       dropoff: addressInput!
     ): Job
+    pickupJob(jobId: ID!): User
   }
 `;
 
@@ -82,4 +77,14 @@ module.exports = typeDefs;
 
 // type MyType {
 //   created: Date
+// }
+
+
+// input jobInput {
+//   quantity: String!
+//   category: String!
+//   date: String!
+//   description: String!
+//   pickup: Address!
+//   dropoff: Address!
 // }

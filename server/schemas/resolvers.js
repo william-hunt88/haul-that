@@ -5,6 +5,7 @@ const { User, Job } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
+
 const resolvers = {
   DateTime: new GraphQLScalarType({
     name: "DateTime",
@@ -17,7 +18,10 @@ const resolvers = {
     jobs: async () => {
       return Job.find().select("-__v -password");
     },
-    time: () => new Date()
+    time: () => new Date(),
+    users: async () => {
+      return User.find()
+    }
   },
 
   Mutation: {
@@ -45,6 +49,7 @@ const resolvers = {
       return { token, user };
     },
     addJob: async (parent, args, context) => {
+
       if (context.user) {
         const job = Job.create({
           ...args,
@@ -55,7 +60,28 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    pickupJob: async (parent, { jobId }, context) => {
+      console.log(jobId)
+      if(context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          {_id: context.user._id},
+          { $push: { jobs: jobId } },
+          { new: true }
+        )
+
+        return updatedUser
+
+<<<<<<< HEAD
+const resolvers = {
+    Query: {
+      helloWorld: () => {
+        return 'hello world!';
+=======
+>>>>>>> 1c356adfb582cbb11f1ab7517c0bf90a3be12969
+      }
+    }
   },
 };
+
 
 module.exports = resolvers;
