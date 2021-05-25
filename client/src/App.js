@@ -4,7 +4,6 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Jobs from "./components/Jobs";
-import Booking from "./components/Booking/Booking";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
@@ -22,7 +21,7 @@ function App() {
       <Route path="/login" component={Login} />
         <Route path="/" component={Home} />
         <Route path="/jobs" component={Jobs} />
-        <Route path="/booking" component={Booking} />
+        
       </Switch>
     </div>
   );
