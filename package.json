@@ -8,11 +8,7 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
-<<<<<<< HEAD
-    "apollo-server-express": "^2.24.0",
-=======
     "apollo-server-express": "^2.24.1",
->>>>>>> f3dda15f6c06244f7c914786bcb6001eef576b7b
     "bcrypt": "^5.0.1",
     "concurrently": "^6.1.0",
     "cors": "^2.8.5",

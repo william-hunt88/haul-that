@@ -1,17 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-<<<<<<< HEAD:client/src/components/Home/index.js
-import  Login  from "../../pages/Login";
-import  Signup  from "../../pages/Signup";
-import Auth from "../../utils/auth";
-
-const Home = () => {
-  const logout = (event) => {
-  event.preventDefault();
-  Auth.logout();
-   };
-=======
 // import Auth from "../utils/auth";
 
 
@@ -24,7 +13,6 @@ function Home() {
   // };
 
   // mutation to get all jobs lat and long from mapquest and send to Map Component as props
->>>>>>> f3dda15f6c06244f7c914786bcb6001eef576b7b:client/src/components/Home.js
 
   return (
     <Router>
