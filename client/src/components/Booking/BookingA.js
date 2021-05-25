@@ -35,7 +35,7 @@ export default class Routes extends Component {
                     {/* time */}
                     {/* description */}
                     {/* button to render next section */}
-                    <form>
+                    <form className="form-container">
                         <Button variant="btn btn-success" onClick={() => history.push('/BookingB')}>Continue</Button>
                     </form>
                 </div>

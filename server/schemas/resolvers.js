@@ -71,13 +71,6 @@ const resolvers = {
 
         return updatedUser
 
-<<<<<<< HEAD
-const resolvers = {
-    Query: {
-      helloWorld: () => {
-        return 'hello world!';
-=======
->>>>>>> 1c356adfb582cbb11f1ab7517c0bf90a3be12969
       }
     }
   },

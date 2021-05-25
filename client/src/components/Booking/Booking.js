@@ -4,11 +4,12 @@ import history from '../../history';
 
 export default class Booking extends Component {
     render() {
+
     
         return (
             <div>
                 <form>
-                    <Button class="buttonbooking" variant="btn btn-success" onClick={() => history.push('/BookingA')}>Book A Job</Button>
+                    <Button className="buttonbooking" variant="btn btn-success" onClick={() => history.push('/BookingA')}>Book A Job</Button>
                 </form>
             </div>
         );

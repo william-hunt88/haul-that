@@ -35,6 +35,8 @@ const typeDefs = gql`
     city: String!
     state: String!
     zip: String!
+    latitude: String
+    longitude: String
   }
 
   input addressInput {
@@ -42,6 +44,8 @@ const typeDefs = gql`
     city: String!
     state: String!
     zip: String!
+    latitude: String
+    longitude: String
   }
 
   type Auth {

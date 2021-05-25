@@ -18,6 +18,12 @@ const addressSchema = new Schema(
       type: String,
       required: true,
     },
+    latitude: {
+      type: String
+    },
+    longitude: {
+      type: String
+    }
   },
   {
     toJSON: {
