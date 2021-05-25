@@ -9,12 +9,6 @@ export default class Routes extends Component {
         return (
             <div>
                 <div>
-                    {/* Item QTY */}
-                    {/* category */}
-                    {/* date */}
-                    {/* time */}
-                    {/* description */}
-                    {/* button to render next section */}
                     <form>
                         <Button variant="btn btn-success" onClick={() => history.push('/BookingD')}>Continue</Button>
                     </form>

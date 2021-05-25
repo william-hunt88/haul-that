@@ -1,42 +1,29 @@
-<<<<<<< HEAD
-import React from 'react';
-import Home from './components/Home';
-import Nav from './components/Nav';
-import Profile from './components/Profile';
-import Landing from './components/Landing';
-
-=======
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
-import Nav from "./components/Nav";
-import Profile from "./components/Profile";
-import Map from "./components/Map"
-// import Service from './components/Service';
-import { BrowserRouter as Router } from 'react-router-dom';
-// import Booking from './components/Booking/Booking';
->>>>>>> 1c356adfb582cbb11f1ab7517c0bf90a3be12969
+import NavBar from "./components/NavBar";
+import Jobs from "./components/Jobs";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
 
 function App() {
   return (
-    <Router>
-    <div>
-      <Nav />
-<<<<<<< HEAD
-
+    <div className="App">
       
-      {/* <Home /> */}
-      
-      <Profile />
-=======
-      <Profile />
-      {/* <Service /> */}
-      <Map />
-      {/* <Home /> */}
-
->>>>>>> 1c356adfb582cbb11f1ab7517c0bf90a3be12969
-      
+      <NavBar />
+      <Switch>
+      <Route path="/signup" component={Signup} />
+      <Route path="/login" component={Login} />
+        <Route path="/" component={Home} />
+        <Route path="/jobs" component={Jobs} />
+        
+      </Switch>
     </div>
-    </Router>
   );
 }
 
