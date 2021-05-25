@@ -1,8 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container } from 'react-bootstrap';
-
-
-
+import { Navbar, Nav, Container } from "react-bootstrap";
 
 function NavBar() {
  return (
@@ -19,12 +16,11 @@ function NavBar() {
                 <Nav.Link href='/account'>Account</Nav.Link>
             </Nav>
         </Navbar.Collapse>
-    </Container>
-    
-</Navbar>
-
+        <Nav.Link  className="login1" href="/login">Login</Nav.Link>
+        <Nav.Link  className="signup1" href="/signup">Sign Up</Nav.Link>
+      </Container>
+    </Navbar>
   );
-    
-  }
+}
 
 export default NavBar;
