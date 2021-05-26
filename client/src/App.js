@@ -32,11 +32,11 @@ function App() {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/signup" component={Signup} /> 
-            <Route path="/BookingA" component={BookingA} /> 
+            <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
+            <Route path="/BookingA" component={BookingA} />
+            <Route exact path="/jobs" component={Jobs} />
             <Route path="/" component={Home} />
-            <Route path="/jobs" component={Jobs} />
           </Switch>
         </div>
       </Router>
