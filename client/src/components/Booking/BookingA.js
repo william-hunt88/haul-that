@@ -3,8 +3,8 @@ import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import history from "../../history";
 import "./booking.css";
 import { useMutation } from "@apollo/react-hooks";
-import { ADD_JOB } from "../utils/mutation";
-import Auth from "../utils/auth";
+import { ADD_JOB } from "../../utils/mutation";
+import Auth from "../../utils/auth";
 
 const BookingA = () => {
   const [formState, setFormState] = useState({
@@ -25,7 +25,7 @@ const BookingA = () => {
     zipD: "",
     latD: "",
     lngD: "",
-    distance: "",
+    distance: 0,
   });
 
   const [addJob, { error }] = useMutation(ADD_JOB);
@@ -38,6 +38,9 @@ const BookingA = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
+    console.log(typeof name);
+    console.log(typeof value);
+
     setFormState({
       ...formState,
       [name]: value,
@@ -45,58 +48,67 @@ const BookingA = () => {
   };
 
   // submit form (notice the async!)
-  const handleFormSubmit = async (event) => {
-    console.log(formState)
-    
+  const handleFetch = async (event) => {
     fetch(
       `http://www.mapquestapi.com/directions/v2/route?key=ejlJ5TZ16qwyxA1YWDLZwhdPp6eTt2qA&from=${formState.addressP} ${formState.cityP}, ${formState.stateP} ${formState.zipP}}&to=${formState.addressD} ${formState.cityD}, ${formState.stateD} ${formState.zipD}`,
       {}
     ).then(function (response) {
       if (response.ok) {
-        response.json().then(function (routeInfo) {
-          console.log(routeInfo.route.distance);
-        });
+        response
+          .json()
+          .then(function (routeInfo) {
+            const value = routeInfo.route.distance;
+            const name = "distance";
+
+            console.log(value);
+            setFormState({
+              ...formState,
+              [name]: value,
+            });
+          })
+          .then(handleFormSubmit());
       }
     });
 
-    let job = {
-      quantity: formState.quantity,
-      category: formState.category,
-      description: formState.description,
-      pickup: {
-        address: formState.addressP,
-        address2: formState.addressP2,
-        city: formState.cityP,
-        state: formState.stateP,
-        zip: formState.zipP,
-        lat: formState.latP,
-        lng: formState.lngP,
-      },
-      dropoff: {
-        address: formState.addressD,
-        address2: formState.addressD2,
-        city: formState.cityD,
-        state: formState.stateD,
-        zip: formState.zipD,
-        lat: formState.latD,
-        lng: formState.lngD,
-      },
-      distance: 0,
+    const handleFormSubmit = async () => {
+      let job = {
+        quantity: formState.quantity,
+        category: formState.category,
+        description: formState.description,
+        pickup: {
+          address: formState.addressP,
+          address2: formState.addressP2,
+          city: formState.cityP,
+          state: formState.stateP,
+          zip: formState.zipP,
+          lat: formState.latP,
+          lng: formState.lngP,
+        },
+        dropoff: {
+          address: formState.addressD,
+          address2: formState.addressD2,
+          city: formState.cityD,
+          state: formState.stateD,
+          zip: formState.zipD,
+          lat: formState.latD,
+          lng: formState.lngD,
+        },
+        distance: formState.distance,
+      };
+      event.preventDefault();
+
+      // use try/catch instead of promises to handle errors
+      try {
+        console.log(job);
+        const { data } = await addJob({
+          variables: { ...job },
+        });
+
+        Auth.login(data.addUser.token);
+      } catch (e) {
+        console.error(e);
+      }
     };
-    event.preventDefault();
-
-    console.log(formState);
-
-    // use try/catch instead of promises to handle errors
-    try {
-      const { data } = await addJob({
-        variables: { ...job },
-      });
-
-      Auth.login(data.addUser.token);
-    } catch (e) {
-      console.error(e);
-    }
   };
 
   return (
@@ -234,7 +246,9 @@ const BookingA = () => {
           <br />
           <Button
             variant="btn btn-success"
-            onClick={() => history.push("/BookingB")}
+            onClick={handleFetch}
+            //   onClick={() => history.push("/BookingB")}
+            //
           >
             Continue
           </Button>

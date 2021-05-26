@@ -28,7 +28,7 @@ const jobSchema = new Schema(
       get: (timestamp) => dateFormat(timestamp),
     },
     distance: {
-      type: String,
+      type: Number,
       required: true,
     },
     pickup: addressSchema,

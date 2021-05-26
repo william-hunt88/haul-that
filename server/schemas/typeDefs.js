@@ -74,6 +74,7 @@ const typeDefs = gql`
       distance: String!
       pickup: addressInput!
       dropoff: addressInput!
+      distance: Int
     ): Job
     pickupJob(jobId: ID!): User
   }
