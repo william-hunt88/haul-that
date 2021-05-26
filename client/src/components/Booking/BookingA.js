@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import history from "../../history";
 import "./booking.css";
+import { useMutation } from "@apollo/react-hooks";
+import { ADD_JOB } from "../utils/mutation";
+import Auth from "../utils/auth";
 
 const BookingA = () => {
   const [formState, setFormState] = useState({
@@ -25,9 +28,36 @@ const BookingA = () => {
     distance: "",
   });
 
+  const [addJob, { error }] = useMutation(ADD_JOB);
+
+  //   addJob({
+  //       variables: {...formState, distance: routeDistance, price: jobPrice}
+  //   })
+
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form (notice the async!)
+  const handleFormSubmit = async (event) => {
+    console.log(formState)
+    
+    fetch(
+      `http://www.mapquestapi.com/directions/v2/route?key=ejlJ5TZ16qwyxA1YWDLZwhdPp6eTt2qA&from=${formState.addressP} ${formState.cityP}, ${formState.stateP} ${formState.zipP}}&to=${formState.addressD} ${formState.cityD}, ${formState.stateD} ${formState.zipD}`,
+      {}
+    ).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (routeInfo) {
+          console.log(routeInfo.route.distance);
+        });
+      }
+    });
 
     let job = {
       quantity: formState.quantity,
@@ -53,15 +83,20 @@ const BookingA = () => {
       },
       distance: 0,
     };
-
-    console.log(job)
-
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    event.preventDefault();
 
     console.log(formState);
+
+    // use try/catch instead of promises to handle errors
+    try {
+      const { data } = await addJob({
+        variables: { ...job },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
@@ -141,6 +176,7 @@ const BookingA = () => {
                 >
                   <option>Choose...</option>
                   <option>...</option>
+                  <option>Alabama</option>
                 </Form.Control>
               </Form.Group>
 
@@ -177,17 +213,21 @@ const BookingA = () => {
 
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>State</Form.Label>
-                <Form.Control as="select" defaultValue="Choose..."      onChange={handleChange}
-                name="stateD">
+                <Form.Control
+                  as="select"
+                  defaultValue="Choose..."
+                  onChange={handleChange}
+                  name="stateD"
+                >
                   <option>Choose...</option>
                   <option>...</option>
+                  <option>Alabama</option>
                 </Form.Control>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridZip">
                 <Form.Label>Zip</Form.Label>
-                <Form.Control      onChange={handleChange}
-                name="zipD" />
+                <Form.Control onChange={handleChange} name="zipD" />
               </Form.Group>
             </Form.Row>
           </Form>
