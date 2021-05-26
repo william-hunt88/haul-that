@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import Auth from "../utils/auth";
 
-function NavBar() {
+const NavBar = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
