@@ -8,6 +8,7 @@ import Jobs from "./components/Jobs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Profile from "./components/Profile";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import BookingA from "./components/Booking/BookingA";
@@ -32,11 +33,13 @@ function App() {
         <div className="App">
           <NavBar />
           <Switch>
+          <Route path="/profile" component={Profile} /> 
             <Route path="/signup" component={Signup} /> 
             <Route path="/BookingA" component={BookingA} /> 
             <Route path="/login" component={Login} />
-            <Route path="/" component={Home} />
             <Route path="/jobs" component={Jobs} />
+            <Route path="/" component={Home} />
+            
           </Switch>
         </div>
       </Router>
