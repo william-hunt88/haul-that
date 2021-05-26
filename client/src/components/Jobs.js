@@ -7,7 +7,11 @@ function Jobs() {
   return (
     <div>
       <Map />
-      <Card class="cardbody" style={{ width: "13rem" }}>
+
+      <Container className='jobForm'>
+      
+       
+      <Card class="cardbody" style={{ width: "17rem" }}>
         <Card.Body>
           <Card.Title>Job #1</Card.Title>
         </Card.Body>
@@ -20,6 +24,10 @@ function Jobs() {
           <Button variant="danger">Accept Job</Button>{" "}
         </Card.Body>
       </Card>
+      
+        
+      
+    </Container>
     </div>
   );
 }
