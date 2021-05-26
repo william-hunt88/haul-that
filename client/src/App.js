@@ -7,9 +7,8 @@ import ApolloClient from "apollo-boost";
 import Jobs from "./components/Jobs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/Login";
-import Signup from "./components/Signup";
 import Profile from "./components/Profile";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Signup from "./components/Signup";
 import "./App.css";
 import BookingA from "./components/Booking/BookingA";
 
