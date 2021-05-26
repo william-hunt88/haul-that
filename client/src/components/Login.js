@@ -9,7 +9,7 @@ export default class Login extends Component {
         <Col xs={3} md={4} />
         <Col xs={5} md={4}>
 
-      <form class="loginform">
+      <form className="loginform">
         <h3 className='logintitle'>Login</h3>
 
         <div className="form-group">
