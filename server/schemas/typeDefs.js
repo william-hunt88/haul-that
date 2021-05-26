@@ -24,6 +24,7 @@ const typeDefs = gql`
     quantity: String!
     category: String!
     date: DateTime!
+    createdAt: String
     description: String!
     pickup: Address
     dropoff: Address
@@ -40,7 +41,8 @@ const typeDefs = gql`
   }
 
   input addressInput {
-    street: String!
+    address: String!
+    address2: String!
     city: String!
     state: String!
     zip: String!

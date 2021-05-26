@@ -2,11 +2,12 @@ const { Schema, model } = require("mongoose");
 const addressSchema = require('./Address')
 const bcrypt = require("bcrypt");
 const { JsonWebTokenError } = require("jsonwebtoken");
+const dateFormat = require('../utils/dateFormat');
 
 const jobSchema = new Schema(
   {
     quantity: {
-      type: Number,
+      type: String,
       required: true,
     },
     category: {

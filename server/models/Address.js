@@ -2,7 +2,11 @@ const { Schema } = require("mongoose");
 
 const addressSchema = new Schema(
   {
-    street: {
+    address: {
+      type: String,
+      required: true,
+    },
+    address2: {
       type: String,
       required: true,
     },
