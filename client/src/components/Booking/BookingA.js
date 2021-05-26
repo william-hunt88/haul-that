@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import history from "../../history";
-import "./booking.css";
+
 
 const BookingA = () => {
 
