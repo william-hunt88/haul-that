@@ -21,10 +21,10 @@ function NavBar() {
             <Nav.Link href="/account">Account</Nav.Link>
             {Auth.loggedIn() ? (
               <div>
-                <Nav.Link className="" to="/profile">
+                <Nav.Link  to="/profile">
                   My Profile
                 </Nav.Link>
-                <Nav.Link className="logout" onClick={logout}>
+                <Nav.Link  onClick={logout}>
                   Logout
                 </Nav.Link>
               </div>

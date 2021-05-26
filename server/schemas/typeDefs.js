@@ -26,6 +26,7 @@ const typeDefs = gql`
     date: DateTime!
     createdAt: String
     description: String!
+    distance: String!
     pickup: Address
     dropoff: Address
     
@@ -70,6 +71,7 @@ const typeDefs = gql`
       category: String!
       date: DateTime!
       description: String!
+      distance: String!
       pickup: addressInput!
       dropoff: addressInput!
     ): Job
