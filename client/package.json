@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-server-express": "^2.24.1",
     "bootstrap": "^5.0.1",
+    "dotenv": "^10.0.0",
     "react-bootstrap": "^1.6.0",
     "react-bootstrap-dropdown-menu": "^1.1.23",
     "react-router-dom": "^5.2.0"

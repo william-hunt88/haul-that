@@ -6,19 +6,44 @@ export const LOGIN_USER = gql`
       token
       user {
         _id
-        username
       }
     }
   }
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($firstName: String!, $lastName: String!, $email: String!, $password: String!, $driver: String, $customer: String) {
+    addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password, driver: $driver, customer: $customer) {
       token
       user {
         _id
-        username
+      }
+    }
+  }
+`;
+
+export const ADD_JOB = gql`
+  mutation addJob($quantity: String!, $category: String!, $date: DateTime!, $description: String!, $distance: String!, $pickup: addressInput!, $dropoff: addressInput!) {
+    addJob(quantity: $quantity, category: $category, date: $date, description: $description, distance: $distance, pickup: $pickup, dropoff: $dropoff) {
+      job {
+        _id: ID
+        quantity
+        category
+        date
+        description
+        distance
+        pickup
+        dropoff
+      }
+    }
+  }
+`;
+
+export const PICKUP_JOB = gql`
+  mutation pickupJob($jobId: ID!) {
+    pickupJob(jobId: $jobId) {
+      user{
+        _id: ID
       }
     }
   }
