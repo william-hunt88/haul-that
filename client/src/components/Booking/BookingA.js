@@ -1,33 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import history from "../../history";
 import "./booking.css";
 
-export default class Routes extends Component {
-//   const [formState, setFormState] = useState({
-//       quantity: "0",
-//       category: "",
-//       description: "",
-//       pickup: {
-//   Address: "",
-//   Address2: "",
-//   City: "",
-//   State: "",
-//   Zip: ""
+const BookingA = () => {
 
-//      },
-//         dropoff: {
-//   Address: "",
-//   Address2: "",
-//   City: "",
-//   State: "",
-//   Zip: ""
-
-//      }:,
-
-//     });
-
-  render() {
     return (
       <Container className="bookingForm">
         <Row>
@@ -133,4 +110,5 @@ export default class Routes extends Component {
       </Container>
     );
   }
-}
+
+  export default BookingA;
