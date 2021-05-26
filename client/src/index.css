@@ -129,6 +129,10 @@ left: 20px;
   color: yellow;
 }
 
+.logout {
+  color: rgba(250, 235, 215, 0.858);
+}
+
 @media screen and (max-width: 575px) {
   .login1.nav-link {
     display: none

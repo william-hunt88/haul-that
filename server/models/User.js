@@ -24,6 +24,14 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    driver: {
+      type: String,
+      // required: true
+    },
+    customer: {
+      type: String,
+      // required: true
+    },
     jobs: [
       {
         type: Schema.Types.ObjectId,

@@ -5,43 +5,40 @@ import { ADD_USER } from "../utils/mutation";
 import Auth from "../utils/auth";
 
 const Signup = () => {
-  //   const [isCheckedDriver, setIsCheckedDriver] = useState(false);
-  //   const [isCheckedCustomer, setIsCheckedCustomer] = useState(true);
 
   const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
-    // isCheckedDriver: false,
-    // isCheckedCustomer: false,
+    // driver: "",
+    // customer: "",
   });
 
   const [addUser, { error }] = useMutation(ADD_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    // }
+        const { name, value } = event.target;
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
   };
 
   //   submit form (notice the async!)
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    console.log(formState)
+    console.log(formState);
 
     // use try/catch instead of promises to handle errors
     try {
       const { data } = await addUser({
         variables: { ...formState },
       });
-
-      console.log(data)
 
       Auth.login(data.addUser.token);
     } catch (e) {
@@ -98,24 +95,6 @@ const Signup = () => {
                 className="form-control"
                 placeholder="Enter password"
                 name="password"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="mb-3">
-              <Form.Check
-                inline
-                label="Driver"
-                name="Driver"
-                type="checkbox"
-                value="checked"
-                onChange={handleChange}
-              />
-              <Form.Check
-                inline
-                label="Customer"
-                name="Customer"
-                type="checkbox"
-                value="checked"
                 onChange={handleChange}
               />
             </div>

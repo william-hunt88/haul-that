@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import BookingA from './components/Booking/BookingA';
 
 function App() {
   const client = new ApolloClient({
