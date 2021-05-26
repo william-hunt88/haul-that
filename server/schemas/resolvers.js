@@ -15,6 +15,16 @@ const resolvers = {
     parseLiteral: (ast) => new Date(ast.value),
   }),
   Query: {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id })
+        console.log(context.user_id)
+
+        return userData;
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
     jobs: async () => {
       return Job.find().select("-__v -password");
     },
@@ -33,7 +43,6 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      console.log(user);
 
       if (!user) {
         throw new AuthenticationError("Incorrect credentials");
@@ -46,6 +55,7 @@ const resolvers = {
       }
 
       const token = signToken(user);
+      console.log(token)
       return { token, user };
     },
     addJob: async (parent, args, context) => {
