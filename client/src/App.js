@@ -1,32 +1,47 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/Home";
+import NavBar from "./components/NavBar";
+import { ApolloProvider } from "@apollo/react-hooks";
+import ApolloClient from "apollo-boost";
+import Jobs from "./components/Jobs";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import BookingA from "./components/Booking/BookingA";
 
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
-import NavBar from './components/NavBar';
-import Profile from './components/Profile';
+const client = new ApolloClient({
+  request: (operation) => {
+    const token = localStorage.getItem("id_token");
 
-//import Map from "./components/Map";
-import Booking from './components/Booking/Booking';
-import 'bootstrap/dist/css/bootstrap.min.css';
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : "",
+      },
+    });
+  },
+  uri: "http://localhost:3001/graphql",
+});
 
 function App() {
   return (
-    <div className="App">
-              <Router>
-                <NavBar/>
-          <Switch>   
-            <Route path='/' component={Home}/>   
-             {/* <Route path='/profile' component={Profile}/>   */}
-             <Route path='/booking' component={Booking}/>               
-             {/* <Route path='/rhino' component={Rhino}/> 
-             <Route path='/seaTurtle' component={SeaTurtle}/>   */}
-                      
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route path="/signup" component={Signup} /> 
+            <Route path="/BookingA" component={BookingA} /> 
+            <Route path="/login" component={Login} />
+            <Route path="/" component={Home} />
+            <Route path="/jobs" component={Jobs} />
           </Switch>
-          </Router>
-
-    </div>
-);
+        </div>
+      </Router>
+    </ApolloProvider>
+  );
 }
 
 export default App;

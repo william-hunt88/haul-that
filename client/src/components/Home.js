@@ -34,7 +34,7 @@ function Home() {
                 <Link to="/login" component={ Login }>Login</Link>
                 <Link to="/signup" component= { Signup }>Signup</Link>
               </>
-            )} */}
+            )}
 
             
           {/* </nav> */}

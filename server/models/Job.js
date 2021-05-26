@@ -2,11 +2,12 @@ const { Schema, model } = require("mongoose");
 const addressSchema = require('./Address')
 const bcrypt = require("bcrypt");
 const { JsonWebTokenError } = require("jsonwebtoken");
+const dateFormat = require('../utils/dateFormat');
 
 const jobSchema = new Schema(
   {
     quantity: {
-      type: Number,
+      type: String,
       required: true,
     },
     category: {
@@ -25,6 +26,10 @@ const jobSchema = new Schema(
       type: Date,
       default: Date.now,
       get: (timestamp) => dateFormat(timestamp),
+    },
+    distance: {
+      type: String,
+      required: true,
     },
     pickup: addressSchema,
 
