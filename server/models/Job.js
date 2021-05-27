@@ -16,7 +16,6 @@ const jobSchema = new Schema(
     },
     date: {
       type: Date,
-      required: true,
     },
     description: {
       type: String,
@@ -33,7 +32,7 @@ const jobSchema = new Schema(
     },
     pickup: addressSchema,
 
-    dropoff: addressSchema
+    dropoff: addressSchema,
   },
   {
     toJSON: {

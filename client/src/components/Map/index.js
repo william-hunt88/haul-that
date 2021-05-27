@@ -1,32 +1,8 @@
 import React, { useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import "./map.css";
+
 
 const Map = () => {
-  const [formState, setFormState] = useState({
-    quantity: "0",
-    category: "",
-    description: "",
-    pickup: {
-      address: "",
-      address2: "",
-      city: "",
-      state: "",
-      zip: "",
-      lat: "",
-      lng: "",
-    },
-    dropoff: {
-      address: "",
-      address2: "",
-      city: "",
-      state: "",
-      zip: "",
-      lat: "",
-      lng: "",
-    },
-    distance: 0,
-  });
 
   const [position, setPosition] = useState({
     lat: 36.1627,

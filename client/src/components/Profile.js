@@ -6,8 +6,7 @@ const Profile = () => {
   return (
     <Container className='profileForm'>
     <Row>
-      <Col xs={5} md={4} />
-      <Col xs={5} md={4}>
+      
       <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={ image } />
   <Card.Body>
@@ -25,8 +24,7 @@ const Profile = () => {
 
 </Card>
 
-      </Col>
-        <Col xs={3} md={4} />
+   
       </Row>
     </Container>)
 };
