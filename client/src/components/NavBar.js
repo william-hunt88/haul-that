@@ -21,17 +21,10 @@ const NavBar = () => {
             
             {Auth.loggedIn() ? (
               <div>
-<<<<<<< HEAD
-                <Nav.Link className="login1" href="/profile" to="/profile"> 
-                  My Profile
-                </Nav.Link>
-                <Nav.Link className="signup1"  onClick={logout}>
-=======
-                <Nav.Link className="login1" to="/profile">
+                <Nav.Link className="login1" href="/profile" to="/profile">
                   My Profile
                 </Nav.Link>
                 <Nav.Link className="signup1" onClick={logout}>
->>>>>>> 8301dc9e41c77a24fe42fb63dd5581804386a676
                   Logout
                 </Nav.Link>
               </div>

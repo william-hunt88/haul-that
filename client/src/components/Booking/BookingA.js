@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import history from "../../history";
-import "./booking.css";
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_JOB } from "../../utils/mutation";
 import Auth from "../../utils/auth";
