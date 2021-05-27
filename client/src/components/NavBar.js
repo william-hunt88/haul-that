@@ -21,10 +21,10 @@ const NavBar = () => {
             <Nav.Link href="/account">Account</Nav.Link>
             {Auth.loggedIn() ? (
               <div>
-                <Nav.Link  to="/profile">
+                <Nav.Link className="login1" to="/profile">
                   My Profile
                 </Nav.Link>
-                <Nav.Link  onClick={logout}>
+                <Nav.Link className="signup1" onClick={logout}>
                   Logout
                 </Nav.Link>
               </div>
@@ -44,6 +44,6 @@ const NavBar = () => {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavBar;

@@ -33,8 +33,8 @@ function App() {
           <Switch>
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/BookingA" component={BookingA} /> 
-            <Route path="/jobs" component={Jobs} />
+            <Route path="/BookingA" component={BookingA} />
+            <Route exact path="/jobs" component={Jobs} />
             <Route path="/" component={Home} />
           </Switch>
         </div>
