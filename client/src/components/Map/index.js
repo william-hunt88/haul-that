@@ -13,12 +13,6 @@ const Map = ({ jobs, loading }) => {
     console.log(item);
     setSelected(item[0]);
   };
-  // const [sites, setSites] = useState([]);
-  // console.log(loading);
-  // if (!loading) {
-  //   console.log(jobs);
-  //   setSites[jobs[0]];
-  // }
 
   console.log(selected);
 
