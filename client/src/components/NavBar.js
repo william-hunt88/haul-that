@@ -18,6 +18,8 @@ const NavBar = () => {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/bookingA">Booking</Nav.Link>
             <Nav.Link href="/jobs">Jobs</Nav.Link>
+            <Nav.Link className="login2"href="/login">Login</Nav.Link>
+            <Nav.Link className="signup2" href="/signup">Signup</Nav.Link>
             
             {Auth.loggedIn() ? (
               <div>

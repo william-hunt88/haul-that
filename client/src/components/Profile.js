@@ -4,7 +4,6 @@ import {
   ListGroupItem,
   ListGroup,
   Container,
-  Col,
   Row,
 } from "react-bootstrap";
 import image from "../images/profile.png";

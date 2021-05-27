@@ -14,7 +14,7 @@ function Home() {
             <h1>Haul That</h1>
           </Link>
         </div>
-        <Image src={ image } fluid />
+        <Image className="image1" src={ image } fluid />
       </header>
     </Router>
   );
