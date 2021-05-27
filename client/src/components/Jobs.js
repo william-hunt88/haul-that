@@ -3,7 +3,9 @@ import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import Map from "./Map";
 import { Col, Row, Container } from "react-bootstrap";
 
-function Jobs() {
+
+const Jobs = () => {
+  
   return (
     <div>
       <Map />

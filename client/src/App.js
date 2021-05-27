@@ -32,11 +32,18 @@ function App() {
         <div className="App">
           <NavBar />
           <Switch>
+<<<<<<< HEAD
           <Route path="/profile" component={Profile} /> 
             <Route path="/signup" component={Signup} /> 
             <Route path="/BookingA" component={BookingA} /> 
             <Route path="/login" component={Login} />
             <Route path="/jobs" component={Jobs} />
+=======
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/BookingA" component={BookingA} />
+            <Route exact path="/jobs" component={Jobs} />
+>>>>>>> 8301dc9e41c77a24fe42fb63dd5581804386a676
             <Route path="/" component={Home} />
             
           </Switch>
