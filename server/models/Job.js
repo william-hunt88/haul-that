@@ -16,7 +16,6 @@ const jobSchema = new Schema(
     },
     date: {
       type: Date,
-      required: true,
     },
     description: {
       type: String,
@@ -28,12 +27,12 @@ const jobSchema = new Schema(
       get: (timestamp) => dateFormat(timestamp),
     },
     distance: {
-      type: Number,
+      type: String,
       required: true,
     },
     pickup: addressSchema,
 
-    dropoff: addressSchema
+    dropoff: addressSchema,
   },
   {
     toJSON: {

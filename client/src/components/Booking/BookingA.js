@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import history from "../../history";
 import "./booking.css";
@@ -38,9 +38,6 @@ const BookingA = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    console.log(typeof name);
-    console.log(typeof value);
-
     setFormState({
       ...formState,
       [name]: value,
@@ -48,67 +45,62 @@ const BookingA = () => {
   };
 
   // submit form (notice the async!)
-  const handleFetch = async (event) => {
-    fetch(
+  const handleFetch = () => {
+  fetch(
       `http://www.mapquestapi.com/directions/v2/route?key=ejlJ5TZ16qwyxA1YWDLZwhdPp6eTt2qA&from=${formState.addressP} ${formState.cityP}, ${formState.stateP} ${formState.zipP}}&to=${formState.addressD} ${formState.cityD}, ${formState.stateD} ${formState.zipD}`,
       {}
     ).then(function (response) {
       if (response.ok) {
-        response
-          .json()
-          .then(function (routeInfo) {
-            const value = routeInfo.route.distance;
-            const name = "distance";
+        response.json().then(function (routeInfo) {
+          const value = routeInfo.route.distance;
+          const name = "distance";
 
-            console.log(value);
-            setFormState({
-              ...formState,
-              [name]: value,
-            });
-          })
-          .then(handleFormSubmit());
+          setFormState({
+            ...formState,
+            [name]: value,
+          });
+          handleFormSubmit(value)
+        });
       }
     });
+  };
 
-    const handleFormSubmit = async () => {
-      let job = {
-        quantity: formState.quantity,
-        category: formState.category,
-        description: formState.description,
-        pickup: {
-          address: formState.addressP,
-          address2: formState.addressP2,
-          city: formState.cityP,
-          state: formState.stateP,
-          zip: formState.zipP,
-          lat: formState.latP,
-          lng: formState.lngP,
-        },
-        dropoff: {
-          address: formState.addressD,
-          address2: formState.addressD2,
-          city: formState.cityD,
-          state: formState.stateD,
-          zip: formState.zipD,
-          lat: formState.latD,
-          lng: formState.lngD,
-        },
-        distance: formState.distance,
-      };
-      event.preventDefault();
-
-      // use try/catch instead of promises to handle errors
-      try {
-        console.log(job);
-        const { data } = await addJob({
-          variables: { ...job },
-        });
-
-        Auth.login(data.addUser.token);
-      } catch (e) {
-        console.error(e);
-      }
+  const handleFormSubmit = async (distance) => {
+    let job = {
+      quantity: formState.quantity,
+      category: formState.category,
+      description: formState.description,
+      distance: distance.toString(),
+      pickup: {
+        address: formState.addressP,
+        address2: formState.addressP2,
+        city: formState.cityP,
+        state: formState.stateP,
+        zip: formState.zipP,
+        lat: formState.latP,
+        lng: formState.lngP,
+      },
+      dropoff: {
+        address: formState.addressD,
+        address2: formState.addressD2,
+        city: formState.cityD,
+        state: formState.stateD,
+        zip: formState.zipD,
+        lat: formState.latD,
+        lng: formState.lngD,
+      },
     };
+
+    // use try/catch instead of promises to handle errors
+    try {
+      console.log(job);
+      const { data } = await addJob({
+        variables: { ...job },
+      });
+
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
