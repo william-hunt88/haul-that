@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, LoadScript} from "@react-google-maps/api";
 
 
 const Map = () => {
@@ -23,8 +23,8 @@ const Map = () => {
   //   })
 
   const mapStyles = {
-    height: "40vh",
-    width: "50%",
+    height: "50vh",
+    width: "80%",
   };
 
   // Get users location and set

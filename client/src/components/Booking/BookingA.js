@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import history from "../../history";
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_JOB } from "../../utils/mutation";
-import Auth from "../../utils/auth";
 
 const BookingA = () => {
   const [formState, setFormState] = useState({
-    quantity: "0",
+    date: "",
     category: "",
     description: "",
     addressP: "",
@@ -15,18 +13,14 @@ const BookingA = () => {
     cityP: "",
     stateP: "",
     zipP: "",
-    latP: "",
-    lngP: "",
     addressD: "",
     addressD2: "",
     cityD: "",
     stateD: "",
     zipD: "",
-    latD: "",
-    lngD: "",
-  });
+    });
 
-  const [addJob, { error }] = useMutation(ADD_JOB);
+  const [addJob] = useMutation(ADD_JOB);
 
   //   addJob({
   //       variables: {...formState, distance: routeDistance, price: jobPrice}
@@ -35,7 +29,8 @@ const BookingA = () => {
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
+console.log(name)
+console.log(typeof value)
     setFormState({
       ...formState,
       [name]: value,
@@ -44,7 +39,7 @@ const BookingA = () => {
 
   // submit form (notice the async!)
   const handleFetch = () => {
-  fetch(
+    fetch(
       `http://www.mapquestapi.com/directions/v2/route?key=ejlJ5TZ16qwyxA1YWDLZwhdPp6eTt2qA&from=${formState.addressP} ${formState.cityP}, ${formState.stateP} ${formState.zipP}}&to=${formState.addressD} ${formState.cityD}, ${formState.stateD} ${formState.zipD}`,
       {}
     ).then(function (response) {
@@ -52,23 +47,35 @@ const BookingA = () => {
         response.json().then(function (routeInfo) {
           const distance = routeInfo.route.distance;
           // const pickupLat = routeInfo.route.locations[0].latLng.
-          const pickupLat = routeInfo.route.locations[0].latLng.lat
-          const pickupLng = routeInfo.route.locations[0].latLng.lng
-          const dropoffLat = routeInfo.route.locations[1].latLng.lat
-          const dropoffLng = routeInfo.route.locations[1].latLng.lng
+          const pickupLat = routeInfo.route.locations[0].latLng.lat;
+          const pickupLng = routeInfo.route.locations[0].latLng.lng;
+          const dropoffLat = routeInfo.route.locations[1].latLng.lat;
+          const dropoffLng = routeInfo.route.locations[1].latLng.lng;
 
           setFormState({
             ...formState,
           });
-          handleFormSubmit(distance, pickupLat, pickupLng, dropoffLat, dropoffLng)
+          handleFormSubmit(
+            distance,
+            pickupLat,
+            pickupLng,
+            dropoffLat,
+            dropoffLng
+          );
         });
       }
     });
   };
 
-  const handleFormSubmit = async (distance, pickupLat, pickupLng, dropoffLat, dropoffLng ) => {
+  const handleFormSubmit = async (
+    distance,
+    pickupLat,
+    pickupLng,
+    dropoffLat,
+    dropoffLng
+  ) => {
     let job = {
-      quantity: formState.quantity,
+      date: formState.date,
       category: formState.category,
       description: formState.description,
       distance: distance.toString(),
@@ -95,10 +102,9 @@ const BookingA = () => {
     // use try/catch instead of promises to handle errors
     try {
       console.log(job);
-      const { data } = await addJob({
+      await addJob({
         variables: { ...job },
       });
-
     } catch (e) {
       console.error(e);
     }
@@ -110,12 +116,12 @@ const BookingA = () => {
         <Col xs={3} md={4} />
         <Col xs={6} md={4}>
           <Form>
-            <Form.Group controlId="formQuantity">
-              <Form.Label>QTY</Form.Label>
+            <Form.Group controlId="dob">
+              <Form.Label>Select Date</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="0"
-                name="quantity"
+                type="date"
+                name="date"
+                placeholder="Day of Delivery"
                 onChange={handleChange}
               />
             </Form.Group>

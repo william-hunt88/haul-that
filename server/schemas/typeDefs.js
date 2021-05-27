@@ -21,9 +21,8 @@ const typeDefs = gql`
 
   type Job {
     _id: ID
-    quantity: String!
-    category: String!
     date: DateTime
+    category: String!
     createdAt: String
     description: String!
     distance: String!
@@ -67,9 +66,8 @@ const typeDefs = gql`
     ): Auth
     login(email: String!, password: String!): Auth
     addJob(
-      quantity: String!
-      category: String!
       date: DateTime
+      category: String!
       description: String!
       distance: String!
       pickup: addressInput!
