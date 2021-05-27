@@ -6,6 +6,9 @@ import { Col, Row, Container } from "react-bootstrap";
 
 const Jobs = () => {
   
+  
+  
+  
   return (
     <div>
       <Map />
@@ -13,7 +16,7 @@ const Jobs = () => {
       <Container className='jobForm'>
       
        
-      <Card class="cardbody" style={{ width: "17rem" }}>
+      <Card className="cardbody" style={{ width: "17rem" }}>
         <Card.Body>
           <Card.Title>Job #1</Card.Title>
         </Card.Body>

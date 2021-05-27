@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import history from "../../history";
 import { useMutation } from "@apollo/react-hooks";
@@ -7,7 +8,7 @@ import Auth from "../../utils/auth";
 
 const BookingA = () => {
   const [formState, setFormState] = useState({
-    quantity: "0",
+    date: "",
     category: "",
     description: "",
     addressP: "",
@@ -15,22 +16,14 @@ const BookingA = () => {
     cityP: "",
     stateP: "",
     zipP: "",
-    latP: "",
-    lngP: "",
     addressD: "",
     addressD2: "",
     cityD: "",
     stateD: "",
     zipD: "",
-    latD: "",
-    lngD: "",
   });
 
   const [addJob, { error }] = useMutation(ADD_JOB);
-
-  //   addJob({
-  //       variables: {...formState, distance: routeDistance, price: jobPrice}
-  //   })
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -98,6 +91,8 @@ const BookingA = () => {
       const { data } = await addJob({
         variables: { ...job },
       });
+
+      window.location.assign('/jobs')
 
     } catch (e) {
       console.error(e);
