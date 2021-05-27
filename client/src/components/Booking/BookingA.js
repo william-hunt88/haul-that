@@ -25,7 +25,6 @@ const BookingA = () => {
     zipD: "",
     latD: "",
     lngD: "",
-    distance: 0,
   });
 
   const [addJob, { error }] = useMutation(ADD_JOB);
@@ -52,20 +51,23 @@ const BookingA = () => {
     ).then(function (response) {
       if (response.ok) {
         response.json().then(function (routeInfo) {
-          const value = routeInfo.route.distance;
-          const name = "distance";
+          const distance = routeInfo.route.distance;
+          // const pickupLat = routeInfo.route.locations[0].latLng.
+          const pickupLat = routeInfo.route.locations[0].latLng.lat
+          const pickupLng = routeInfo.route.locations[0].latLng.lng
+          const dropoffLat = routeInfo.route.locations[1].latLng.lat
+          const dropoffLng = routeInfo.route.locations[1].latLng.lng
 
           setFormState({
             ...formState,
-            [name]: value,
           });
-          handleFormSubmit(value)
+          handleFormSubmit(distance, pickupLat, pickupLng, dropoffLat, dropoffLng)
         });
       }
     });
   };
 
-  const handleFormSubmit = async (distance) => {
+  const handleFormSubmit = async (distance, pickupLat, pickupLng, dropoffLat, dropoffLng ) => {
     let job = {
       quantity: formState.quantity,
       category: formState.category,
@@ -77,8 +79,8 @@ const BookingA = () => {
         city: formState.cityP,
         state: formState.stateP,
         zip: formState.zipP,
-        lat: formState.latP,
-        lng: formState.lngP,
+        lat: pickupLat.toString(),
+        lng: pickupLng.toString(),
       },
       dropoff: {
         address: formState.addressD,
@@ -86,8 +88,8 @@ const BookingA = () => {
         city: formState.cityD,
         state: formState.stateD,
         zip: formState.zipD,
-        lat: formState.latD,
-        lng: formState.lngD,
+        lat: dropoffLat.toString(),
+        lng: dropoffLng.toString(),
       },
     };
 
@@ -128,6 +130,7 @@ const BookingA = () => {
                 name="category"
                 onChange={handleChange}
               >
+                <option> ... </option>
                 <option>Furniture</option>
                 <option>Scrap Metal</option>
                 <option>Yard Waste</option>
