@@ -18,15 +18,15 @@ const BookingA = () => {
     cityD: "",
     stateD: "",
     zipD: "",
-    });
+  });
 
   const [addJob] = useMutation(ADD_JOB);
 
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-console.log(name)
-console.log(typeof value)
+    console.log(name);
+    console.log(typeof value);
     setFormState({
       ...formState,
       [name]: value,
@@ -102,8 +102,7 @@ console.log(typeof value)
         variables: { ...job },
       });
 
-      window.location.assign('/jobs')
-
+      window.location.assign("/jobs");
     } catch (e) {
       console.error(e);
     }
@@ -231,7 +230,7 @@ console.log(typeof value)
                   name="stateD"
                 >
                   <option>Choose...</option>
-                  <option>...</option>
+                  <option>Tennessee</option>
                   <option>Alabama</option>
                 </Form.Control>
               </Form.Group>

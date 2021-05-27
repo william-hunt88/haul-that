@@ -7,12 +7,18 @@ import { GET_JOBS } from "../utils/queries";
 
 
 const Jobs = () => {
-  const {data} = useQuery(GET_JOBS);
-  if (data){console.log(data)}
+  const {loading, data} = useQuery(GET_JOBS);
+  var jobs = []
+  if(!loading){
+    jobs = [data.jobs]
+  }
 
   return (
     <div>
-      <Map />
+      <Map
+      jobs={jobs}
+      loading={loading}
+       />
 
       <Container className='jobForm'>
       
