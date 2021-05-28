@@ -22,10 +22,6 @@ const BookingA = () => {
 
   const [addJob] = useMutation(ADD_JOB);
 
-  //   addJob({
-  //       variables: {...formState, distance: routeDistance, price: jobPrice}
-  //   })
-
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -105,6 +101,8 @@ const BookingA = () => {
       await addJob({
         variables: { ...job },
       });
+
+      window.location.assign("/jobs");
     } catch (e) {
       console.error(e);
     }
@@ -281,7 +279,7 @@ const BookingA = () => {
                   name="stateD"
                 >
                   <option>Choose...</option>
-                  <option>...</option>
+                  <option>Tennessee</option>
                   <option>Alabama</option>
                   <option>Alaska</option>
                   <option>Arizona</option>

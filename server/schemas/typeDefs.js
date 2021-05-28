@@ -9,6 +9,7 @@ const typeDefs = gql`
     users: [User]
     time: DateTime
     me: User
+    user(_id: String!): User
   }
 
   type User {
@@ -80,18 +81,5 @@ const typeDefs = gql`
 // export the typeDefs
 module.exports = typeDefs;
 
-// scalar Date
 
-// type MyType {
-//   created: Date
-// }
-
-
-// input jobInput {
-//   quantity: String!
-//   category: String!
-//   date: String!
-//   description: String!
-//   pickup: Address!
-//   dropoff: Address!
-// }
+//    user(_id: String!): User
