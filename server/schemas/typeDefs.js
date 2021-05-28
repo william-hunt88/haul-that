@@ -17,6 +17,7 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
+    username: String!
     jobs: [Job]
   }
 
@@ -60,6 +61,7 @@ const typeDefs = gql`
     addUser(
       firstName: String!
       lastName: String!
+      username: String!
       email: String!
       password: String!
       driver: String

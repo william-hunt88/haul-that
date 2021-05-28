@@ -35,7 +35,7 @@ const Map = ({ jobs, loading }) => {
       return (
         <GoogleMap
           mapContainerStyle={mapStyles}
-          zoom={13}
+          zoom={11}
           center={defaultCenter}
         >
           {locations.map((item) => {

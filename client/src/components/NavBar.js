@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container , Badge} from "react-bootstrap";
 import Auth from "../utils/auth";
 
 const NavBar = () => {
@@ -17,7 +17,9 @@ const NavBar = () => {
           <Nav>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/bookingA">Booking</Nav.Link>
-            <Nav.Link href="/jobs">Jobs</Nav.Link>
+            <Nav.Link href="/jobs" >Jobs
+            <Badge className="badge1" variant="light">3</Badge>
+            </Nav.Link>
             <Nav.Link className="login2"href="/login">Login</Nav.Link>
             <Nav.Link className="signup2" href="/signup">Signup</Nav.Link>
             
