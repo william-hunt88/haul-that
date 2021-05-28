@@ -155,6 +155,15 @@ code {
   justify-content: center;
 }
 
+.map-info {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+.your-location {
+  background-color: blue;
+}
+
 
 
 body {

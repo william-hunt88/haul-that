@@ -25,6 +25,7 @@ export const GET_JOBS = gql`
   jobs {
     _id
     date
+    category
     description
     distance
     createdAt
