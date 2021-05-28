@@ -75,6 +75,29 @@ const Signup = () => {
             </div>
 
             <div className="form-group">
+              <label>Username</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter username"
+                name="username"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                className="form-control"
+                placeholder="123-456-7890"
+                name="phone"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="form-group">
               <label>Email</label>
               <input
                 type="email"

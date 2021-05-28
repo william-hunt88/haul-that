@@ -166,7 +166,11 @@ code {
   background-color: blue;
 }
 
-
+.badge1{
+  position: fixed;
+  top: 18px;
+  font-weight: 100px;
+  }
 
 body {
   display: flex;
