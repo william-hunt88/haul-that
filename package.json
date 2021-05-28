@@ -1,6 +1,7 @@
 {
   "name": "haul-that",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",

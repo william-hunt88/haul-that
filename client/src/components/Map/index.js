@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   GoogleMap,
   LoadScript,
@@ -9,14 +9,14 @@ import {
 const Map = ({ jobs, loading }) => {
   const [selected, setSelected] = useState({});
 
-  const onSelect = (item) => {
-    console.log(item);
-    setSelected(item[0]);
+  const onSelect = (job) => {
+    console.log(job);
+    setSelected(job[0]);
   };
 
   console.log(selected);
 
-  const handleMapRender = () => {
+  const handleMapRender = (currentLocation) => {
     if (!loading) {
       const locations = jobs[0].map((location) => {
         console.log(console.log(location._id));
@@ -27,6 +27,7 @@ const Map = ({ jobs, loading }) => {
               lat: parseFloat(location.pickup.lat),
               lng: parseFloat(location.pickup.lng),
             },
+            distance: location.distance,
           },
         ];
       });
@@ -46,13 +47,21 @@ const Map = ({ jobs, loading }) => {
               />
             );
           })}
+          <Marker
+          icon = "http://maps.google.com/mapfiles/arrow.png"
+          className="your-location"
+            key={"you are here"}
+            position={currentLocation}
+          />
           {selected.location && (
             <InfoWindow
               position={selected.location}
               clickable={true}
               onCloseClick={() => setSelected({})}
             >
-              <p>{selected.name}</p>
+              <p className="map-info">
+                {parseInt(selected.distance)} miles from A to B
+              </p>
             </InfoWindow>
           )}
         </GoogleMap>
@@ -87,7 +96,7 @@ const Map = ({ jobs, loading }) => {
   return (
     <div className="map-container">
       <LoadScript googleMapsApiKey="AIzaSyB_c7GFN8Edf79UFOfpLna7LNX4X7MALHM">
-        {handleMapRender()}
+        {handleMapRender(defaultCenter)}
       </LoadScript>
     </div>
   );
