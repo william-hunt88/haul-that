@@ -151,8 +151,6 @@ code {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-=======
 .map-info {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
@@ -164,7 +162,6 @@ code {
 
 
 
->>>>>>> d61a39e1fbb877e0810d0207e973ce359fd8cc73
 body {
   display: flex;
   font-weight: 400;
