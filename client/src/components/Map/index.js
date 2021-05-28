@@ -14,7 +14,6 @@ const Map = ({ jobs, loading }) => {
     setSelected(job[0]);
   };
 
-  console.log(selected);
 
   const handleMapRender = (currentLocation) => {
     if (!loading) {
