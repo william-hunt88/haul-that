@@ -15,30 +15,33 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/bookingA">Booking</Nav.Link>
-            <Nav.Link href="/jobs">Jobs</Nav.Link>
-            <Nav.Link className="login2"href="/login">Login</Nav.Link>
-            <Nav.Link className="signup2" href="/signup">Signup</Nav.Link>
-            
             {Auth.loggedIn() ? (
-              <div>
+              <React.Fragment>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/bookingA">Booking</Nav.Link>
+                <Nav.Link href="/jobs">Jobs</Nav.Link>
+                <Nav.Link className="login2" href="/login">
+                  Login
+                </Nav.Link>
+                <Nav.Link className="signup2" href="/signup">
+                  Signup
+                </Nav.Link>
                 <Nav.Link className="login1" href="/profile" to="/profile">
                   My Profile
                 </Nav.Link>
                 <Nav.Link className="signup1" onClick={logout}>
                   Logout
                 </Nav.Link>
-              </div>
+              </React.Fragment>
             ) : (
-              <div>
+              <React.Fragment>
                 <Nav.Link className="login1" href="/login">
                   Login
                 </Nav.Link>
                 <Nav.Link className="signup1" href="/signup">
                   Sign Up
                 </Nav.Link>
-              </div>
+              </React.Fragment>
             )}
           </Nav>
         </Navbar.Collapse>

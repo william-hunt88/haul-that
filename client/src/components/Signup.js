@@ -9,10 +9,10 @@ const Signup = () => {
   const [formState, setFormState] = useState({
     firstName: "",
     lastName: "",
+    username: "",
     email: "",
-    password: "",
-    // driver: "",
-    // customer: "",
+    phone: "",
+    password: ""
   });
 
   const [addUser] = useMutation(ADD_USER);
@@ -31,8 +31,6 @@ const Signup = () => {
   //   submit form (notice the async!)
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
-    console.log(formState);
 
     // use try/catch instead of promises to handle errors
     try {
@@ -62,7 +60,6 @@ const Signup = () => {
                 placeholder="First name"
                 name="firstName"
                 onChange={handleChange}
-                // value={formState.firstName}
               />
             </div>
 
