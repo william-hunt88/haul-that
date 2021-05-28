@@ -115,12 +115,14 @@ code {
 .login1.nav-link {
   position: fixed;
   right: 80px;
+  top: 16px;
   color: rgba(250, 235, 215, 0.858);
 }
 
 .signup1.nav-link {
   position: fixed;
   right: 5px;
+  top: 16px;
   color: rgba(250, 235, 215, 0.858);
 }
 
@@ -142,7 +144,11 @@ code {
   display: flex;
   justify-content: center;
   padding-top: 100px;
-  
+}
+
+.nav-align {
+  display: flex;
+  flex-direction: row;
 }
 
 .profileForm {
