@@ -18,7 +18,7 @@ const Map = ({ jobs, loading }) => {
   const handleMapRender = (currentLocation) => {
     if (!loading) {
       const locations = jobs[0].map((location) => {
-        console.log(console.log(location._id));
+        // console.log(console.log(location._id));
         return [
           {
             name: location._id,

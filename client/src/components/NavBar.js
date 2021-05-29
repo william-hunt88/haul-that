@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container , Badge} from "react-bootstrap";
+import { Navbar, Nav, Container, Badge } from "react-bootstrap";
 import Auth from "../utils/auth";
 
 const NavBar = () => {
@@ -7,7 +7,7 @@ const NavBar = () => {
     event.preventDefault();
     Auth.logout();
   };
-  console.log(Auth.loggedIn());
+  // console.log(Auth.loggedIn());
   return (
     <Navbar collapseOnSelect fixed="top" expand="sm" bg="danger" variant="dark">
       <h1 className="title">HaulThat</h1>
@@ -15,11 +15,16 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-          {Auth.loggedIn() ? (
+            {Auth.loggedIn() ? (
               <React.Fragment>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/bookingA">Booking</Nav.Link>
-                <Nav.Link href="/jobs">Jobs</Nav.Link>
+                <Nav.Link href="/jobs">
+                  Jobs
+                  {/* <Badge class="badge1" variant="light">
+                    3
+                  </Badge> */}
+                </Nav.Link>
                 <Nav.Link className="login2" href="/login">
                   Login
                 </Nav.Link>

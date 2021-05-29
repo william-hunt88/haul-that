@@ -209,6 +209,12 @@ html,
   text-align: center;
 }
 
+.badge.badge-light{
+  color: yellow;
+}
+
+
+
 .logout {
   color: rgba(250, 235, 215, 0.858);
 }
