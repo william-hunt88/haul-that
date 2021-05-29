@@ -9,7 +9,7 @@ const AutoIncrement = require("mongoose-sequence")(mongoose);
 const jobSchema = new Schema(
   {
     date: {
-      type: Date,
+      type: String,
       required: true,
     },
     category: {
