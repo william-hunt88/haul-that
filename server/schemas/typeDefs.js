@@ -9,6 +9,7 @@ const typeDefs = gql`
     users: [User]
     time: DateTime
     me: User
+    user(_id: String!): User
   }
 
   type User {
@@ -16,12 +17,15 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
+    username: String!
+    phone: String!
     jobs: [Job]
   }
 
   type Job {
+    id: ID
     _id: ID
-    date: DateTime
+    date: String!
     category: String!
     createdAt: String
     description: String!
@@ -59,14 +63,16 @@ const typeDefs = gql`
     addUser(
       firstName: String!
       lastName: String!
+      username: String!
       email: String!
+      phone: String!
       password: String!
       driver: String
       customer: String
     ): Auth
     login(email: String!, password: String!): Auth
     addJob(
-      date: DateTime
+      date: String!
       category: String!
       description: String!
       distance: String!
@@ -80,18 +86,5 @@ const typeDefs = gql`
 // export the typeDefs
 module.exports = typeDefs;
 
-// scalar Date
 
-// type MyType {
-//   created: Date
-// }
-
-
-// input jobInput {
-//   quantity: String!
-//   category: String!
-//   date: String!
-//   description: String!
-//   pickup: Address!
-//   dropoff: Address!
-// }
+//    user(_id: String!): User
