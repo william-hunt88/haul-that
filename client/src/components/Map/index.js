@@ -17,7 +17,7 @@ const Map = ({ jobs, loading }) => {
   const handleMapRender = (currentLocation) => {
     if (!loading) {
       const locations = jobs[0].map((location) => {
-        console.log(console.log(location._id));
+        // console.log(console.log(location._id));
         return [
           {
             name: location._id,
@@ -40,6 +40,7 @@ const Map = ({ jobs, loading }) => {
           {locations.map((item) => {
             return (
               <Marker
+              icon="http://maps.google.com/mapfiles/ms/micons/truck.png"
                 key={item[0].name}
                 position={item[0].location}
                 onClick={() => onSelect(item)}
@@ -47,7 +48,7 @@ const Map = ({ jobs, loading }) => {
             );
           })}
           <Marker
-            icon="http://maps.google.com/mapfiles/arrow.png"
+            icon="http://maps.google.com/mapfiles/ms/micons/blue-dot.png"
             className="your-location"
             key={"you are here"}
             position={currentLocation}
