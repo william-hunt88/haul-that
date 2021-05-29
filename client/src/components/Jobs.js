@@ -7,10 +7,12 @@ import { GET_JOBS } from "../utils/queries";
 
 const Jobs = () => {
   const { loading, data } = useQuery(GET_JOBS);
+  
   var jobs = [];
   if (!loading) {
     jobs = [data.jobs];
   }
+
   const handleCardRender = () => {
     var cards = [];
     console.log(jobs[0]);
@@ -24,7 +26,7 @@ const Jobs = () => {
         return (
           <Card className="cardbody" key={job._id} style={{ width: "17rem" }}>
             <Card.Body>
-              <Card.Title>Job {job._id}</Card.Title>
+              <Card.Title>Job # {job.id}</Card.Title>
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroupItem>Distance: {parseInt(job.distance)} miles </ListGroupItem>

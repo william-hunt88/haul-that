@@ -14,7 +14,6 @@ const Map = ({ jobs, loading }) => {
     setSelected(job[0]);
   };
 
-
   const handleMapRender = (currentLocation) => {
     if (!loading) {
       const locations = jobs[0].map((location) => {
@@ -27,6 +26,7 @@ const Map = ({ jobs, loading }) => {
               lng: parseFloat(location.pickup.lng),
             },
             distance: location.distance,
+            id: location.id,
           },
         ];
       });
@@ -47,8 +47,8 @@ const Map = ({ jobs, loading }) => {
             );
           })}
           <Marker
-          icon = "http://maps.google.com/mapfiles/arrow.png"
-          className="your-location"
+            icon="http://maps.google.com/mapfiles/arrow.png"
+            className="your-location"
             key={"you are here"}
             position={currentLocation}
           />
@@ -59,6 +59,7 @@ const Map = ({ jobs, loading }) => {
               onCloseClick={() => setSelected({})}
             >
               <p className="map-info">
+                <h4>Job #{selected.id}</h4>
                 {parseInt(selected.distance)} miles from A to B
               </p>
             </InfoWindow>
