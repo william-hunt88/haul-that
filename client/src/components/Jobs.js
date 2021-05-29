@@ -4,30 +4,20 @@ import Map from "./Map";
 import { Container } from "react-bootstrap";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_JOBS } from "../utils/queries";
-import { QUERY_ME_BASIC } from "../utils/queries";
+import moment from "moment";
+// import { QUERY_ME_BASIC } from "../utils/queries";
 
 const Jobs = () => {
   const { loading, data } = useQuery(GET_JOBS);
-<<<<<<< HEAD
-  const { me } = useQuery(QUERY_ME_BASIC);
-
-=======
-  
->>>>>>> da85385012b638e796b247c4a0c0f5d6e2584773
   var jobs = [];
   if (!loading) {
     jobs = [data.jobs];
+    // const date = moment({job.date}).format('DD MMM, YYYY');
+    // console.log(date);
   }
-
-<<<<<<< HEAD
-  const pickupHandler = (_id) => {
-    console.log(me);
-  };
-=======
->>>>>>> da85385012b638e796b247c4a0c0f5d6e2584773
   const handleCardRender = () => {
     var cards = [];
-
+   
     // console.log(jobs[0]);
     if (loading) {
       return <div>Loading...</div>;
@@ -39,23 +29,23 @@ const Jobs = () => {
         return (
           <Card className="cardbody" key={job._id} style={{ width: "17rem" }}>
             <Card.Body>
-<<<<<<< HEAD
-              <Card.Title>{job.description}</Card.Title>
-=======
               <Card.Title>Job # {job.id}</Card.Title>
->>>>>>> da85385012b638e796b247c4a0c0f5d6e2584773
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroupItem>
-                Distance: {parseInt(job.distance)} miles{" "}
+                {moment(job.date).format("MMMM Do YYYY")}
               </ListGroupItem>
+              <ListGroupItem>
+                Dropoff Distance: {parseInt(job.distance)} miles{" "}
+              </ListGroupItem>
+              <ListGroupItem>{job.description}</ListGroupItem>
               <ListGroupItem>Item Category: {job.category}</ListGroupItem>
-              <ListGroupItem>Price: ${job.distance / 2}</ListGroupItem>
+              <ListGroupItem>
+                Price: ${parseInt(job.distance * 1.2)}
+              </ListGroupItem>
             </ListGroup>
             <Card.Body>
-              <Button variant="danger" onClick={pickupHandler(job.id)}>
-                Accept Job
-              </Button>{" "}
+              <Button variant="danger">Accept Job</Button>{" "}
             </Card.Body>
           </Card>
         );
