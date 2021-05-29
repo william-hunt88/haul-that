@@ -8,16 +8,23 @@ import { QUERY_ME_BASIC } from "../utils/queries";
 
 const Jobs = () => {
   const { loading, data } = useQuery(GET_JOBS);
+<<<<<<< HEAD
   const { me } = useQuery(QUERY_ME_BASIC);
 
+=======
+  
+>>>>>>> da85385012b638e796b247c4a0c0f5d6e2584773
   var jobs = [];
   if (!loading) {
     jobs = [data.jobs];
   }
 
+<<<<<<< HEAD
   const pickupHandler = (_id) => {
     console.log(me);
   };
+=======
+>>>>>>> da85385012b638e796b247c4a0c0f5d6e2584773
   const handleCardRender = () => {
     var cards = [];
 
@@ -32,7 +39,11 @@ const Jobs = () => {
         return (
           <Card className="cardbody" key={job._id} style={{ width: "17rem" }}>
             <Card.Body>
+<<<<<<< HEAD
               <Card.Title>{job.description}</Card.Title>
+=======
+              <Card.Title>Job # {job.id}</Card.Title>
+>>>>>>> da85385012b638e796b247c4a0c0f5d6e2584773
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroupItem>

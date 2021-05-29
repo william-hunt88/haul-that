@@ -33,6 +33,7 @@ export const QUERY_ME_BASIC = gql`
 export const GET_JOBS = gql`
 {
   jobs {
+    id
     _id
     date
     category
