@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "https://salty-brook-01352.herokuapp.com/graphql",
+  "mongodb+srv://wfh2d88:Iaabmc88@cluster0.q5idz.mongodb.net/haul-that-copy?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
