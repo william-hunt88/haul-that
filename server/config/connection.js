@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  process.env.MONGODB_URI ,
+  "https://salty-brook-01352.herokuapp.com/graphql",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
