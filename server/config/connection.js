@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb+srv://wfh2d88:Iaabmc88@cluster0.q5idz.mongodb.net/haul-that-copy?retryWrites=true&w=majority",
+  process.env.MONGODB_URI || "mongodb://localhost/haul-that",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
